@@ -1,0 +1,6 @@
+{
+  "name": "Zenith Studio",
+  "description": "Production-grade AI systems, agents, and custom software engineered to their peak with high performance and clear architectural visibility.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

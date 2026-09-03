@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg: #F6F7F9;
+    --bg-panel: #EEF0F4;
+    --bg-panel-2: #E4E7ED;
+    --line: #DADEE6;
+    --ink: #14161D;
+    --ink-dim: #4A5060;
+    --ink-faint: #7B8194;
+    --brass: #A8763A;
+    --brass-dim: #D9BC8B;
+    --brass-soft: rgba(168, 118, 58, 0.12);
+    --brass-hover: #C79554;
+    --dusk: #3E6E7A;
+    --paper: #FFFFFF;
+    --font-serif: 'Fraunces', Georgia, serif;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+    background-color: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background: #D9BC8B;
+    color: #14161D;
+  }
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+@keyframes marqueeScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 26s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
+}
+
+@keyframes blinkCursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-cursor {
+  animation: blinkCursor 1s step-end infinite;
+}
